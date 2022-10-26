@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro de Evento</title>
+  </head>
+  <body>
+    <h1>Cadastro de Evento</h1>
+
+    <form action="/evento" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" /><br /><br />
+      <label for="dataDeInicio">Data de Inicio:</label>
+      <input type="date" id="dataDeInicio" name="dataDeInicio" /><br /><br />
+      <label for="dataFinal">Data de Término:</label>
+      <input type="date" id="dataFinal" name="dataFinal" /><br /><br />
+      <input type="submit" value="Cadastrar" />
+    </form>
+
+    <br />
+    <form action="/evento/lista">
+      <button type="submit">Voltar</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro de Atividades</title>
+  </head>
+  <body>
+    <h1>Cadastro de Atividades</h1>
+
+    <form action="/atividade" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" /><br /><br />
+      <label for="dataDeInicio">Data de Inicio:</label>
+      <input type="date" id="dataDeInicio" name="dataDeInicio" /><br /><br />
+      <label for="dataDeEntrega">Data de Término:</label>
+      <input type="date" id="dataDeEntrega" name="dataDeEntrega" /><br /><br />
+      <label for="codEvento">Código do Evento:</label>
+      <input type="codEvento" id="codEvento" name="codEvento" /><br /><br />
+      <input type="submit" value="Cadastrar" />
+    </form>
+
+    <br />
+    <form action="/atividade/lista">
+      <button type="submit">Voltar</button>
+    </form>
+  </body>
+</html>

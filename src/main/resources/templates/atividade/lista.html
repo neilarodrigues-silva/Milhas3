@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Atividades</title>
+  </head>
+  <body>
+    <h1>Atividades</h1>
+
+    <div th:each="atividade : ${listaDeAtividades}">
+      <form th:action="${'/atividade/' + atividade.getCod() + '/descricao'}">
+        <span
+          th:text="${atividade.getCod() + ' - ' + atividade.getNome()}"
+        ></span>
+        <button type="submit">Visualizar</button>
+      </form>
+    </div>
+
+    <br />
+    <form action="/home">
+      <button type="submit">Voltar</button>
+    </form>
+    <br />
+    <form action="/atividade/cadastro">
+      <button type="submit">Cadastrar Novo Usuário</button>
+    </form>
+  </body>
+</html>

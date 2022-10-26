@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Eventos</title>
+  </head>
+  <body>
+    <h1>Eventos</h1>
+
+    <div th:each="evento : ${listaDeEventos}">
+      <form th:action="${'/evento/' + evento.getCod() + '/descricao'}">
+        <span th:text="${evento.getCod() + ' - ' + evento.getNome()}"></span>
+        <button type="submit">Visualizar</button>
+      </form>
+    </div>
+
+    <br />
+    <form action="/home">
+      <button type="submit">Voltar</button>
+    </form>
+    <br />
+    <form action="/evento/cadastro">
+      <button type="submit">Cadastrar Novo Evento</button>
+    </form>
+  </body>
+</html>

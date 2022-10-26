@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Atividade</title>
+  </head>
+  <body>
+    <h1 th:text="${atividade.getNome()}">Nome do Atividade</h1>
+
+    <p th:text="${atividade.getDataDeInicio()}">Data de Início</p>
+    <p th:text="${atividade.getDataDeEntrega()}">Data de Entrega</p>
+    <p th:text="${atividade.getCodEvento()}">Código do Evento</p>
+
+    <br />
+    <form action="/atividade/lista">
+      <button type="submit">Voltar</button>
+    </form>
+  </body>
+</html>

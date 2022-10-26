@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividades Concluidas</title>
+</head>
+<body>
+<h1>Atividades Concluídas</h1>
+
+<form action="/atividadesConcluidas" method="post">
+
+    <label for="codEvento">Código do Evento:</label>
+    <input type="codEvento" id="codEvento" name="codEvento" /><br /><br />
+    <label for="codParticipante">Código do Participante:</label>
+    <input type="codParticipante" id="codParticipante" name="codParticipante" /><br /><br />
+    <label for="dataEvento">Código do Evento:</label>
+    <input type="dataEvento" id="dataEvento" name="dataEvento" /><br /><br />
+    <input type="submit" value="Exibir Lista" />
+</form>
+<br />
+<form action="/atividade/lista">
+    <button type="submit">Voltar</button>
+</form>
+</body>
+</html>
+
+</head>
+<body>
+<form th:action="@{/users/save}" th:object="${user}" method="post">
+    <p>
+        <label>Roles:
+            <input type="checkbox" name="roles"
+                   th:each="role : ${allRoles}"
+                   th:text="${role.name}"
+                   th:value="${role.id}"
+                   th:field="*{roles}"
+            />
+        </label>
+    </p>
+</form>
+</body>
+</html>

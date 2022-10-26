@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Usuários</title>
+  </head>
+  <body>
+    <h1>Usuários</h1>
+
+    <div th:each="usuario : ${listaDeUsuarios}">
+      <form th:action="${'/usuario/' + usuario.getCod() + '/descricao'}">
+        <span th:text="${usuario.getCod() + ' - ' + usuario.getNome()}"></span>
+        <button type="submit">Visualizar</button>
+      </form>
+    </div>
+
+    <br />
+    <form action="/home">
+      <button type="submit">Voltar</button>
+    </form>
+    <br />
+    <form action="/usuario/cadastro">
+      <button type="submit">Cadastrar Novo Usuário</button>
+    </form>
+  </body>
+</html>

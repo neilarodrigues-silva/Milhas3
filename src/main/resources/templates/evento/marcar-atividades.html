@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Marcar Atividades</title>
+  </head>
+  <body>
+    <h1>Marcar Atividades</h1>
+
+    <div th:each="participante : ${listaDeParticipantes}">
+      <form
+              th:action="${'/participante/' + participante.getCod() + '/descricao'}"
+      >
+        <span
+                th:text="${participante.getCod() + ' - ' + participante.getNome()}"
+        ></span>
+        <button type="submit">Visualizar</button>
+      </form>
+      <div th:each="atividade : ${listaDeAtividades}">
+        <form th:action="${'/atividade/' + atividade.getCod() + '/descricao'}">
+        <span
+                th:text="${atividade.getCod() + ' - ' + atividade.getNome()}"
+        ></span>
+          <button type="submit">Visualizar</button>
+        </form>
+      </div>
+    </div>
+    <form>
+      <label>Participante 1</label>
+      <label>
+        <input type="checkbox" name="atividade" value="Atividade 1" />
+      </label>Atividade 1
+      <input type="checkbox" name="atividade" value="Atividade 2" />Atividade 2
+      <br />
+      <label>Participante 2</label>
+      <input type="checkbox" name="atividade" value="Atividade 1" />Atividade 1
+      <input type="checkbox" name="atividade" value="Atividade 2" />Atividade 2
+      <br />
+      <label>Participante 3</label>
+      <input type="checkbox" name="atividade" value="Atividade 1" />Atividade 1
+      <input type="checkbox" name="atividade" value="Atividade 2" />Atividade 2
+      <br />
+      <label>Participante 4</label>
+      <input type="checkbox" name="atividade" value="Atividade 1" />Atividade 1
+      <input type="checkbox" name="atividade" value="Atividade 2" />Atividade 2
+      <br />
+      <input type="submit" value="Salvar" />
+    </form>
+
+    <div th:each="atividade : ${listaDeAtividades}">
+      <table th:each="participante : ${listaDeParticipantes}">
+        <tr>
+          <th th:text="${participante.getCod() + ' - ' + participante.getNome()}"></th>
+        </tr>
+        <tr>
+          <th>
+            <form th:action="${'/atividade/' + atividade.getCod() + '/marcar'}">
+              <span th:text="${atividade.getCod() + ' - ' + atividade.getNome()}"></span>
+              <button type="submit">Marcar como Concluido</button>
+            </form>
+          </th>
+        </tr>
+      </table>
+    </div>
+
+    <br />
+    <form action="/evento/lista">
+      <button type="submit">Voltar</button>
+    </form>
+  </body>
+</html>

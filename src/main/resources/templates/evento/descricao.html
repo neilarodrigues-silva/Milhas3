@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Evento</title>
+  </head>
+  <body>
+    <h1 th:text="${evento.getCod() + ' - ' + evento.getNome()}">Nome do Evento</h1>
+
+    <p th:text="${evento.getDataDeInicio()}">Data de Início</p>
+    <p th:text="${evento.getDataFinal()}">Data de Término</p>
+
+    <h1>Lista de grupos que participaram do evento</h1>
+    <br />
+    <form action="/grupo/cadastro">
+      <button type="submit">Cadastrar novo grupo no evento</button>
+    </form>
+    <br />
+    <div th:each="grupo : ${listaDeGrupos}">
+      <form th:action="${'/grupo/' + grupo.getCod() + '/descricao'}">
+        <span th:text="${grupo.getCod() + ' - ' + grupo.getNome()}"></span>
+        <button type="submit">Visualizar</button>
+      </form>
+    </div>
+
+    <h1>Lista de atividades do evento</h1>
+    <br />
+    <form action="/atividade/cadastro">
+      <button type="submit">Cadastrar nova atividade do evento</button>
+    </form>
+    <br />
+    <div th:each="atividade : ${listaDeAtividades}">
+      <form
+        th:action="${'/atividade/' + atividade.getCod() + '/descricao'}"
+      >
+        <span
+          th:text="${atividade.getCod() + ' - ' + atividade.getNome()}"
+        ></span>
+        <button type="submit">Visualizar</button>
+      </form>
+    </div>
+
+    <br />
+    <form action="/evento/lista">
+      <button type="submit">Voltar</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Participantes Presentes</title>
+</head>
+<body>
+<h1>Participantes Presentes</h1>
+
+<form action="/presencas" method="post">
+
+    <label for="codEvento">Código do Evento:</label>
+    <input type="codEvento" id="codEvento" name="codEvento" /><br /><br />
+    <label for="codEvento">Código do Evento:</label>
+    <input type="codAtividade" id="codAtividade" name="codAtividade" /><br /><br />
+    <label for="codParticipante">Código da Atividade:</label>
+    <input type="codParticipante" id="codParticipante" name="codParticipante" /><br /><br />
+    <label for="dataEvento">Data de Conclusão:</label>
+    <input type="dataConclusao" id="dataEvento" name="dataConclusao" /><br /><br />
+    <input type="submit" value="Exibir Lista" />
+</form>
+<br />
+<form action="/atividade/lista">
+    <button type="submit">Voltar</button>
+</form>
+</body>
+</html>
+
+</head>
+<body>
+
+</body>
+</html>

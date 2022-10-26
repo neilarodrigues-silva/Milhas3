@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Participante</title>
+  </head>
+  <body>
+    <h1 th:text="${participante.getNome()}">Nome do Participante</h1>
+
+    <p th:text="${participante.getNivel()}">Nivel</p>
+    <p th:text="${participante.getQuatroLetras()}">Quatro letras</p>
+    <p th:text="${participante.getCodGrupo()}">Código do Grupo</p>
+
+    <br />
+    <form action="/participante/lista">
+      <button type="submit">Voltar</button>
+    </form>
+  </body>
+</html>

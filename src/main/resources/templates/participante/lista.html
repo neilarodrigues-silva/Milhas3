@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Participantes</title>
+
+    <form th:action="@{/Marcarpresencas}" th:object="${Marcarpresencas}" method="post">
+      <p>
+        <label>Presencas:
+          <input type="checkbox" name="presencas"
+                 th:each="MarcarPresencas : ${allMarcarPresencas}"
+                 th:text="${MarcarPresencas.name}"
+                 th:value="${MarcarPresencas.id}"
+                 th:field="*{MarcarPresencas}"
+          />
+        </label>
+      </p>
+    </form>
+
+  </head>
+  <body>
+    <h1>Participantes</h1>
+
+    <div th:each="participante : ${listaDeParticipantes}">
+      <form
+        th:action="${'/participante/' + participante.getCod() + '/descricao'}"
+      >
+        <span
+          th:text="${participante.getCod() + ' - ' + participante.getNome()}"
+        ></span>
+        <button type="submit">Visualizar</button>
+      </form>
+    </div>
+
+    <br />
+    <form action="/home">
+      <button type="submit">Voltar</button>
+    </form>
+    <br />
+    <form action="/participante/cadastro">
+      <button type="submit">Cadastrar Novo Usuário</button>
+    </form>
+  </body>
+</html>

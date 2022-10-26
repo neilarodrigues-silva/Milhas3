@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grupo</title>
+  </head>
+  <body>
+    <h1 th:text="${grupo.getNome()}">Nome do Grupo</h1>
+
+    <p th:text="${grupo.getCodEvento()}">Código do Evento</p>
+
+    <br />
+    <form action="/grupo/lista">
+      <button type="submit">Voltar</button>
+    </form>
+  </body>
+</html>

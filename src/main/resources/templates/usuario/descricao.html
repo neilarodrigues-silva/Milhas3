@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Usuario</title>
+  </head>
+  <body>
+    <h1 th:text="${usuario.getNome()}">Nome do Usuario</h1>
+
+    <p th:text="${usuario.getQuatroLetras()}">Quatro letras</p>
+    <p th:text="${usuario.getSenha()}">Senha</p>
+    <p th:text="${usuario.getEmail()}">E-mail</p>
+
+    <br />
+    <form action="/usuario/lista">
+      <button type="submit">Voltar</button>
+    </form>
+  </body>
+</html>
